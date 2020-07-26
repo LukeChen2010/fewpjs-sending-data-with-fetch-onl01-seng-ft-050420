@@ -1,23 +1,30 @@
 // Add your code here
-function submitData( name, email ) {
-  return fetch( 'http://localhost:3000/users', {
+function submitData( name, email ) 
+{
+  return fetch( 'http://localhost:3000/users', 
+  {
       method: "POST",
-      headers: {
+      headers: 
+      {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      body: JSON.stringify( {
+      body: JSON.stringify( 
+        {
         name,
         email
       } )
     } )
-    .then( function ( response ) {
+    .then( function ( response ) 
+    {
       return response.json()
     } )
-    .then( function ( object ) {
+    .then( function ( object ) 
+    {
       document.body.innerHTML = object[ "id" ]
     } )
-    .catch( function ( error ) {
+    .catch( function ( error ) 
+    {
       document.body.innerHTML = error.message
     } )
 }
